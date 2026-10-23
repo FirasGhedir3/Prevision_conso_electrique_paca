@@ -1,0 +1,145 @@
+{
+  "region": "Provence-Alpes-Côte d'Azur",
+  "qualite_donnees": {
+    "lignes_brutes": 70128,
+    "region": "Provence-Alpes-Côte d'Azur",
+    "lignes_region": 70128,
+    "doublons_horodatage_supprimes": 8,
+    "valeurs_non_positives_supprimees": 0,
+    "pas_manquants_apres_reindexation": 8,
+    "pas_interpoles": 8,
+    "pas_manquants_restants": 0,
+    "lignes_grille_reguliere": 70128,
+    "debut": "2019-12-31 23:00:00+00:00",
+    "fin": "2023-12-31 22:30:00+00:00"
+  },
+  "decoupage": {
+    "train": "2020-01-08 -> 2022-09-30 (47807 pas)",
+    "validation": "2022-10-01 -> 2022-12-31 (4418 pas)",
+    "test": "2023-01-01 -> 2023-12-31 (17520 pas)"
+  },
+  "meilleure_iteration_early_stopping": 100,
+  "metriques_test": {
+    "Naïf : même heure J-1": {
+      "MAE_MW": 173.92442922374428,
+      "RMSE_MW": 237.69310371789965,
+      "MAPE_%": 3.9080223059779073,
+      "R2": 0.9156273843135714,
+      "n": 17520
+    },
+    "Naïf : même heure J-7": {
+      "MAE_MW": 320.9985350076103,
+      "RMSE_MW": 438.2334320748214,
+      "MAPE_%": 6.908385179967161,
+      "R2": 0.7131998579075914,
+      "n": 17520
+    },
+    "LightGBM initial (5 var., cible directe)": {
+      "MAE_MW": 130.3478426963907,
+      "RMSE_MW": 178.29794778653016,
+      "MAPE_%": 2.9059888233376046,
+      "R2": 0.9525254300935714,
+      "n": 17520
+    },
+    "LightGBM 5 var., cible résiduelle": {
+      "MAE_MW": 127.97500728842962,
+      "RMSE_MW": 175.65018039355778,
+      "MAPE_%": 2.8478066026958357,
+      "R2": 0.9539249780986515,
+      "n": 17520
+    },
+    "LightGBM (complet)": {
+      "MAE_MW": 128.1180799668456,
+      "RMSE_MW": 175.5054897738525,
+      "MAPE_%": 2.8509958210353052,
+      "R2": 0.9540008547947579,
+      "n": 17520
+    }
+  },
+  "segments_test": {
+    "jour_ouvre_normal": {
+      "MAE_MW": 127.70104443429067,
+      "MAPE_%": 2.7779542699765822,
+      "n": 12048
+    },
+    "week_end": {
+      "MAE_MW": 128.8417902717817,
+      "MAPE_%": 2.975534123061976,
+      "n": 5040
+    },
+    "jour_ferie": {
+      "MAE_MW": 149.57429855900028,
+      "MAPE_%": 3.835138665575977,
+      "n": 528
+    },
+    "noel_25_26_dec_2023": {
+      "MAE_MW": 255.58011120033552,
+      "MAPE_%": 5.442582261536024,
+      "n": 96
+    }
+  },
+  "top_variables_gain": [
+    {
+      "variable": "dayofweek",
+      "gain_%": 27.1
+    },
+    {
+      "variable": "hour_cos",
+      "gain_%": 12.95
+    },
+    {
+      "variable": "dow_cos",
+      "gain_%": 9.98
+    },
+    {
+      "variable": "doy_cos",
+      "gain_%": 7.08
+    },
+    {
+      "variable": "hour",
+      "gain_%": 6.98
+    }
+  ],
+  "importance_permutation": [
+    {
+      "groupe": "Lag 24 h",
+      "delta_MAE_MW": 771.166,
+      "ecart_type": 3.922
+    },
+    {
+      "groupe": "Jour de semaine (dow, week-end)",
+      "delta_MAE_MW": 70.307,
+      "ecart_type": 0.516
+    },
+    {
+      "groupe": "Heure (hour, sin/cos)",
+      "delta_MAE_MW": 28.485,
+      "ecart_type": 0.482
+    },
+    {
+      "groupe": "Mois / saison",
+      "delta_MAE_MW": 11.386,
+      "ecart_type": 0.152
+    },
+    {
+      "groupe": "Jours fériés (+ veille/lendemain)",
+      "delta_MAE_MW": 6.376,
+      "ecart_type": 0.1
+    },
+    {
+      "groupe": "Moyennes/écart-type glissants",
+      "delta_MAE_MW": 2.993,
+      "ecart_type": 0.179
+    },
+    {
+      "groupe": "Lag 7 jours",
+      "delta_MAE_MW": 0.605,
+      "ecart_type": 0.06
+    },
+    {
+      "groupe": "Lag 48 h",
+      "delta_MAE_MW": 0.196,
+      "ecart_type": 0.029
+    }
+  ]
+}

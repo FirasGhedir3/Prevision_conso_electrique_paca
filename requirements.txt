@@ -1,0 +1,6 @@
+pandas>=2.2
+numpy>=1.26
+lightgbm>=4.3
+holidays>=0.50
+matplotlib>=3.8
+pytest>=8.0

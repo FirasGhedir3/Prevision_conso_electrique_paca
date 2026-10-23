@@ -1,0 +1,16 @@
+[1/6] Chargement : eco2mix-regional-cons-def.csv
+[2/6] Nettoyage (Provence-Alpes-Côte d'Azur)
+       {'lignes_brutes': 70128, 'region': "Provence-Alpes-Côte d'Azur", 'lignes_region': 70128, 'doublons_horodatage_supprimes': 8, 'valeurs_non_positives_supprimees': 0, 'pas_manquants_apres_reindexation': 8, 'pas_interpoles': 8, 'pas_manquants_restants': 0, 'lignes_grille_reguliere': 70128, 'debut': '2019-12-31 23:00:00+00:00', 'fin': '2023-12-31 22:30:00+00:00'}
+[3/6] Création des variables (cycliques, fériés, lags)
+[4/6] Entraînement et évaluation
+       train=47807  valid=4418  test=17520
+                                           MAE_MW  RMSE_MW  ...     R2        n
+Naïf : même heure J-1                     173.924  237.693  ...  0.916  17520.0
+Naïf : même heure J-7                     320.999  438.233  ...  0.713  17520.0
+LightGBM initial (5 var., cible directe)  130.348  178.298  ...  0.953  17520.0
+LightGBM 5 var., cible résiduelle         127.975  175.650  ...  0.954  17520.0
+LightGBM (complet)                        128.118  175.505  ...  0.954  17520.0
+
+[5 rows x 5 columns]
+[5/6] Importance des variables et erreurs par segment
+[6/6] Sauvegarde des résultats et figures

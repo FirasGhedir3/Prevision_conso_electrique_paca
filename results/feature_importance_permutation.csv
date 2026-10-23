@@ -1,0 +1,9 @@
+groupe,delta_MAE_MW,ecart_type
+Lag 24 h,771.1659,3.9218
+"Jour de semaine (dow, week-end)",70.3067,0.5155
+"Heure (hour, sin/cos)",28.4847,0.4816
+Mois / saison,11.3856,0.1523
+Jours fériés (+ veille/lendemain),6.3763,0.0997
+Moyennes/écart-type glissants,2.9931,0.1786
+Lag 7 jours,0.6051,0.06
+Lag 48 h,0.196,0.0292

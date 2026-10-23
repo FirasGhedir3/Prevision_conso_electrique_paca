@@ -1,0 +1,6 @@
+,MAE_MW,RMSE_MW,MAPE_%,R2,n
+Naïf : même heure J-1,173.9244,237.6931,3.908,0.9156,17520.0
+Naïf : même heure J-7,320.9985,438.2334,6.9084,0.7132,17520.0
+"LightGBM initial (5 var., cible directe)",130.3478,178.2979,2.906,0.9525,17520.0
+"LightGBM 5 var., cible résiduelle",127.975,175.6502,2.8478,0.9539,17520.0
+LightGBM (complet),128.1181,175.5055,2.851,0.954,17520.0
